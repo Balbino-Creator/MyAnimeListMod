@@ -1,14 +1,11 @@
 import { Articles } from "./Articles";
-import animes from "../animes.json"
 
-export function ArticlesGrid(){
-    const animesData = animes.data;
-    console.log(animesData);
+export function ArticlesGrid({animesFiltrados}){
     return(
         <>
-        <main className="mt-20 flex flex-wrap gap-6">
+        <main className="mt-20 flex flex-wrap gap-8 justify-center">
             {
-                animesData.map(anime => <Articles key={anime.mal_id} anime={anime}/>)
+                animesFiltrados.map(anime => <Articles key={anime.mal_id} anime={anime}/>)
             }
         </main>
         </>
